@@ -42,7 +42,7 @@
 
 
 
-   // Burger Menu
+//    Burger Menu
 	var burgerMenu = function() {
 
 		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
@@ -62,7 +62,21 @@
 	};
 	burgerMenu();
 
-
+	document.addEventListener('DOMContentLoaded', function() {
+		const toggleButton = document.querySelector('.navbar-toggler');
+		const toggleIcon = toggleButton.querySelector('span');
+	  
+		toggleButton.addEventListener('click', function() {
+		  if (toggleIcon.classList.contains('oi-menu')) {
+			toggleIcon.classList.remove('oi-menu');
+			toggleIcon.classList.add('oi-x'); // Assuming 'oi-x' is your "close" icon class
+		  } else {
+			toggleIcon.classList.remove('oi-x');
+			toggleIcon.classList.add('oi-menu');
+		  }
+		});
+	  });
+	  
 	var onePageClick = function() {
 
 

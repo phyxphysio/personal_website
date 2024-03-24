@@ -62,6 +62,7 @@
 	};
 	burgerMenu();
 
+	// Change burger menu icon when menu open
 	document.addEventListener('DOMContentLoaded', function() {
 		const toggleButton = document.querySelector('.navbar-toggler');
 		const toggleIcon = toggleButton.querySelector('span');
@@ -76,7 +77,28 @@
 		  }
 		});
 	  });
-	  
+
+	// Close burger menu when link is clicked
+	$(document).ready(function() {
+		// Listen for a click on any '.nav-link'
+		$('.navbar-nav .nav-item .nav-link').click(function() {
+			// Check if the burger menu is visible and if so, toggle it
+			var toggle = $('.navbar-toggler');
+			if (toggle.css('display') !== 'none') {
+				// Trigger the click to close the menu
+				toggle.trigger('click');
+				
+				// Since you're triggering the click, the toggleButton event listener will handle the icon change.
+				// But if for some reason you need to explicitly change it here as well, you can do so:
+				var toggleIcon = toggle.find('span');
+				if (toggleIcon.hasClass('oi-x')) {
+					toggleIcon.removeClass('oi-x').addClass('oi-menu');
+				} else {
+					toggleIcon.removeClass('oi-menu').addClass('oi-x');
+				}
+			}
+		});
+	});	
 	var onePageClick = function() {
 
 

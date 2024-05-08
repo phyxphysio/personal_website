@@ -4,6 +4,12 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+ .owl-carousel .owl-stage, .owl-carousel.owl-drag .owl-item {
+  -ms-touch-action: auto;
+      touch-action: auto;
+  }
+  
+  
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
